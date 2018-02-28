@@ -14,8 +14,42 @@
 #ifndef AUX_H
 #define AUX_H
 
+#include <tuple>
+#include <string>
 
+namespace aux{
+    struct tcolor{
+        int c; //0 or 1 for black or red 
+    };
 
+    struct tdirection{
+        int d;
+    };
 
+    struct tsensedir{
+        int s;
+    };
+
+    struct tleftright{
+        int l;
+    };
+
+    struct tmark{
+        int m;
+    };
+
+    struct tstate{
+        int st;
+    };
+
+    struct tcondition{
+        int cond;
+    };
+
+    struct tposition{
+        int x;
+        int y;
+    };
+};
 #endif /* AUX_H */
 

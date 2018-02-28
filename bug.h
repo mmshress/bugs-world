@@ -26,17 +26,17 @@ public:
         cout << "Bug has been initialized with default parameters. \n";
     };
     ~Bug(){};
-    Bug(int s, int c, int r, int d, bool f){
-        state = s;
-        team = color(c);
+    Bug(int s, int cl, int r, int dir, bool f){
+        state.st = s;
+        color.c = cl;
+        direction.d = dir;
         resting = r;
-        direction = d;
         has_food = f;
         cout << "Bug has been init'd with following parameters: " << s << c << r << d << f << endl;
         
     }
     int get_state(){
-        return state;
+        return state.st;
     }
     
     int get_resting(){
@@ -44,7 +44,7 @@ public:
     }
     
     int get_direction(){
-        return direction;
+        return direction.d;
     }
     
     bool get_has_food(){
@@ -52,19 +52,23 @@ public:
     }
     
     int get_color(){ //this returns either a 0 or 1, i.e. black or red. 
-        return team.get_c(); 
+        return color.c; 
+    }
+    
+    void set_color(int cl){
+        color.c = cl;
     }
     
     void set_state(int s){
-        state = s;
+        state.st = s;
     }
     
     void set_resting(int r){
         resting = r;
     }
     
-    void set_direction(int d){
-        direction = d;
+    void set_direction(int dir){
+        direction.d = dir;
     }
     
     void set_has_food(bool f){
@@ -72,11 +76,11 @@ public:
     }
     
 protected:
-    int state = 0;
+    aux::tstate state;
+    aux::tcolor color;
+    aux::tdirection direction;
     int resting = 0;
-    int direction = 0;
-    bool has_food = 0;
-    color::color team = color(0);
+    bool has_food = false;
 };
 
 
