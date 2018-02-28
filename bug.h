@@ -25,62 +25,67 @@ public:
     Bug(){
         cout << "Bug has been initialized with default parameters. \n";
     };
+    
     ~Bug(){};
+    
     Bug(int s, int cl, int r, int dir, bool f){
-        state.st = s;
-        color.c = cl;
-        direction.d = dir;
-        resting = r;
-        has_food = f;
-        cout << "Bug has been init'd with following parameters: " << s << c << r << d << f << endl;
+        bstate.st = s;
+        bcolor.c = cl;
+        bdirection.d = dir;
+        bresting = r;
+        bhas_food = f;
+        cout << "Bug has been init'd with following parameters: " << s << cl << r << dir << f << endl;
         
     }
-    int get_state(){
-        return state.st;
+    
+    //Getter functions, as per bug.pdf
+    int state(){
+        return bstate.st;
     }
     
-    int get_resting(){
-        return resting;
+    int resting(){
+        return bresting;
     }
     
-    int get_direction(){
-        return direction.d;
+    int direction(){
+        return bdirection.d;
     }
     
-    bool get_has_food(){
-        return has_food;
+    bool has_food(){
+        return bhas_food;
     }
     
-    int get_color(){ //this returns either a 0 or 1, i.e. black or red. 
-        return color.c; 
+    int color(){ //this returns either a 0 or 1, i.e. black or red. 
+        return bcolor.c; 
     }
     
     void set_color(int cl){
-        color.c = cl;
+        bcolor.c = cl;
     }
     
     void set_state(int s){
-        state.st = s;
+        bstate.st = s;
     }
     
     void set_resting(int r){
-        resting = r;
+        bresting = r;
     }
     
     void set_direction(int dir){
-        direction.d = dir;
+        bdirection.d = dir;
     }
     
     void set_has_food(bool f){
-        has_food = f;
+        bhas_food = f;
     }
-    
+
+//b stands for bug; so, bug state, bug color, etc.     
 protected:
-    aux::tstate state;
-    aux::tcolor color;
-    aux::tdirection direction;
-    int resting = 0;
-    bool has_food = false;
+    aux::tstate bstate;
+    aux::tcolor bcolor;
+    aux::tdirection bdirection;
+    int bresting = 0;
+    bool bhas_food = false;
 };
 
 

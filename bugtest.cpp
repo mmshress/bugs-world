@@ -20,11 +20,11 @@ using namespace std;
  */
 int main(int argc, char** argv) {
     Bug::Bug b = Bug::Bug(1, 1, 1, 1, 1);
-    cout << b.get_color();
-    cout << b.get_direction();
-    cout << b.get_has_food();
-    cout << b.get_resting();
-    cout << b.get_state();
+    cout << b.color();
+    cout << b.direction();
+    cout << b.has_food();
+    cout << b.resting();
+    cout << b.state();
     
     return 0;
 }
